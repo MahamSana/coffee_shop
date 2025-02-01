@@ -24,28 +24,33 @@ This project is a simple Point-of-Sale API for a coffee shop. It lets customers 
    cd coffee_shop
 
 2. **Ruby Version:**
+
+    ```bash
     ruby '3.1.6'
 
 3. **Build & Run:**
 
     We’re using SQLite (so no external DB is needed). The docker-compose.yml is set up
 
+    ```bash
     docker-compose up --build
 
 
 4. **Run Migrations & seed data:**
 
+    ```bash
     docker-compose run web rails db:migrate
     docker-compose run web rails db:seed
 
 
 5. **Test the API:**
 
-    -List Items:
+    1. List Items:
         Open your browser or Postman and visit http://localhost:3000/items.
 
-    -Create an Order:
+    2. Create an Order:
         Send a POST request to http://localhost:3000/orders with a JSON body like:
+        ```bash
             {
                 "items": [
                     { "item_id": 1, "quantity": 2 },
@@ -53,14 +58,15 @@ This project is a simple Point-of-Sale API for a coffee shop. It lets customers 
                 ]
             }
 
-    -Pay for an Order:
+    3. Pay for an Order:
         POST to http://localhost:3000/orders/1/pay (replace 1 with your order ID).
 
-    -View Order Details:
+    4. View Order Details:
         GET http://localhost:3000/orders/1.
 
 5. **Run tests:**
 
+    ```bash
     docker-compose run web rails test
 
 6.  **Notifications:**
