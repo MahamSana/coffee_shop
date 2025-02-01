@@ -1,0 +1,125 @@
+{
+    "info": {
+      "_postman_id": "a1b2c3d4-5678-90ab-cdef-1234567890ab",
+      "name": "Coffee Shop POS API",
+      "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    },
+    "item": [
+      {
+        "name": "List Items",
+        "request": {
+          "method": "GET",
+          "header": [],
+          "url": {
+            "raw": "http://localhost:3000/items",
+            "protocol": "http",
+            "host": [
+              "localhost"
+            ],
+            "port": "3000",
+            "path": [
+              "items"
+            ]
+          }
+        },
+        "response": [
+          {
+            "name": "Sample Response",
+            "originalRequest": {
+              "method": "GET",
+              "header": [],
+              "url": {
+                "raw": "http://localhost:3000/items",
+                "protocol": "http",
+                "host": [
+                  "localhost"
+                ],
+                "port": "3000",
+                "path": [
+                  "items"
+                ]
+              }
+            },
+            "status": "OK",
+            "code": 200,
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": "[\n  {\n    \"id\": 1,\n    \"name\": \"Caffè Latte\",\n    \"description\": \"Espresso with steamed milk\",\n    \"price\": \"3.50\",\n    \"tax_rate\": \"0.070\",\n    \"created_at\": \"2025-02-01T12:00:00.000Z\",\n    \"updated_at\": \"2025-02-01T12:00:00.000Z\"\n  },\n  {\n    \"id\": 2,\n    \"name\": \"Donut\",\n    \"description\": \"Delicious glazed donut\",\n    \"price\": \"1.50\",\n    \"tax_rate\": \"0.070\",\n    \"created_at\": \"2025-02-01T12:00:00.000Z\",\n    \"updated_at\": \"2025-02-01T12:00:00.000Z\"\n  },\n  {\n    \"id\": 3,\n    \"name\": \"Coffee Mug\",\n    \"description\": \"Ceramic mug\",\n    \"price\": \"5.00\",\n    \"tax_rate\": \"0.070\",\n    \"created_at\": \"2025-02-01T12:00:00.000Z\",\n    \"updated_at\": \"2025-02-01T12:00:00.000Z\"\n  }\n]"
+          }
+        ]
+      },
+      {
+        "name": "Create Order",
+        "request": {
+          "method": "POST",
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": {
+            "mode": "raw",
+            "raw": "{\n  \"items\": [\n    { \"item_id\": 1, \"quantity\": 2 },\n    { \"item_id\": 2, \"quantity\": 1 }\n  ]\n}"
+          },
+          "url": {
+            "raw": "http://localhost:3000/orders",
+            "protocol": "http",
+            "host": [
+              "localhost"
+            ],
+            "port": "3000",
+            "path": [
+              "orders"
+            ]
+          }
+        },
+        "response": []
+      },
+      {
+        "name": "Get Order Details",
+        "request": {
+          "method": "GET",
+          "header": [],
+          "url": {
+            "raw": "http://localhost:3000/orders/1",
+            "protocol": "http",
+            "host": [
+              "localhost"
+            ],
+            "port": "3000",
+            "path": [
+              "orders",
+              "1"
+            ]
+          }
+        },
+        "response": []
+      },
+      {
+        "name": "Pay for Order",
+        "request": {
+          "method": "POST",
+          "header": [],
+          "url": {
+            "raw": "http://localhost:3000/orders/1/pay",
+            "protocol": "http",
+            "host": [
+              "localhost"
+            ],
+            "port": "3000",
+            "path": [
+              "orders",
+              "1",
+              "pay"
+            ]
+          }
+        },
+        "response": []
+      }
+    ]
+  }

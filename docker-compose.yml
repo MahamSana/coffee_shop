@@ -1,0 +1,19 @@
+version: '3.8'
+
+services:
+  web:
+    build: .
+    command: rails server -b 0.0.0.0 -p 3000
+    volumes:
+      - .:/app
+    ports:
+      - "3000:3000"
+    environment:
+      RAILS_ENV: development
+    # If using SQLite, you don't need to depend on a separate db service.
+    # depends_on:
+    #   - db
+
+# The db service is commented out because we are using SQLite.
+# volumes:
+#   postgres_data:
